@@ -143,3 +143,15 @@ canvas {
   color: white;
   background: pink;
 } */
+
+.gradient-bg {
+  background: linear-gradient(180deg, #f12271 0%, #fa642f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.font-new {
+  font-family: "", sans-serif;
+  font-style: italic;
+}

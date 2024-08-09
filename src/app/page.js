@@ -65,10 +65,17 @@ export default function Home() {
       });
 
       gsap.from(headingChars, {
-        yPercent: 200,
-        stagger: 0.025,
-        duration: 1,
+        yPercent: -200,
+        stagger: 0.01,
+        duration: 2,
         delay: 1,
+        ease: "power4.inOut",
+      });
+
+      gsap.from(".subheading", {
+        yPercent: -200,
+        duration: 1.5,
+        delay: 2.5,
         ease: "power4.inOut",
       });
 
@@ -109,12 +116,21 @@ export default function Home() {
       ref={homeRef}
       className="text-white w-full min-h-screen flex flex-col items-center"
     >
-      <section className="hero-section w-full h-screen flex justify-center">
+      <section className="hero-section w-full h-screen flex justify-center items-center">
         <div className="logo w-fit h-fit fixed top-10 left-10 z-10">
           <Image src="/logo.webp" alt="logo" width={200} height={200} />
         </div>
-        <div className="w-fit h-fit p-6 overflow-hidden mt-[5rem] flex items-center justify-center">
-          <h1 className="heading text-[clamp(4rem,17vw,17rem)] font-bold tracking-tighter text-center opacity-90">
+        <div className="relative top-[-3rem] w-fit h-fit flex flex-col items-center justify-center">
+          <div className="w-fit h-fit absolute top-[-4rem] text-white overflow-hidden">
+            <h1 className="subheading text-[clamp(1rem,1.75vw,1.75rem)] font-light tracking-tighter text-center">
+              India's Foremost Talent Hub <br />
+              <span className="gradient-bg">
+                <span className="text-white font-thin italic">From</span>{" "}
+                <span className="font-medium">Discovery to Performance</span>
+              </span>
+            </h1>
+          </div>
+          <h1 className="heading text-[clamp(4rem,15vw,15rem)] font-bold tracking-tighter text-center opacity-90">
             StarClinch
           </h1>
         </div>
@@ -135,7 +151,9 @@ export default function Home() {
             <View orbit className="w-full h-full overflow-hidden">
               <Common controls />
               <Float floatIntensity={1.5} floatingRange={[-0.25, 0.25]}>
-                <Logo scale={3} homeRef={homeRef} />
+                <Center>
+                  <Logo scale={3.5} homeRef={homeRef} />
+                </Center>
               </Float>
             </View>
           </div>

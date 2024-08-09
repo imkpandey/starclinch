@@ -34,25 +34,43 @@ export default function Logo({ scale, homeRef }) {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
 
+      gsap.from(ref.current.rotation, {
+        x: 0,
+        y: 3,
+        z: 0,
+        duration: 1,
+        delay: 0.5,
+        ease: "none",
+      });
+
       tl.current = gsap.timeline({
         scrollTrigger: {
           trigger: homeRef.current,
-          start: "top center",
-          end: "bottom center",
+          start: "top top",
+          end: "bottom top",
           scrub: true,
           // markers: true,
         },
       });
 
-      tl.current.to(
-        ref.current.position,
-        {
-          y: 5,
+      tl.current
+        .to(ref.current.position, {
+          x: -3,
+          y: 11,
           duration: 2,
           ease: "none",
-        },
-        0
-      );
+        })
+        .to(
+          ref.current.rotation,
+          {
+            x: 0,
+            y: 10,
+            z: 0,
+            duration: 2,
+            ease: "none",
+          },
+          "<"
+        );
     }, ref);
 
     return () => ctx.revert();
@@ -60,7 +78,7 @@ export default function Logo({ scale, homeRef }) {
   return (
     <group
       ref={ref}
-      position={[0, height * 1.01, 0]}
+      position={[0, height * 1.25, 0]}
       scale={scale}
       dispose={null}
     >
