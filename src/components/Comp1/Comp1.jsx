@@ -16,8 +16,8 @@ const Comp1 = () => {
         const verticalTimeline = gsap.timeline({
           scrollTrigger: {
             trigger: ".wrapper",
-            start: "top top+=50%", // Start when the center of .wrapper aligns with the center of the viewport
-            end: "top top", // End when the top of .wrapper aligns with the top of the viewport
+            start: "center center", // Pin when the center of .wrapper aligns with the center of the viewport
+        end: "top top+=50%",
             scrub: true,
             // pin:true,
             onUpdate: (self) => {
