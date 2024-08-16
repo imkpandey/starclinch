@@ -9,6 +9,7 @@ import SplitType from "split-type";
 import Stars from "@/components/canvas/stars";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import Image from "next/image";
+import Comp1 from "@/components/Comp1/Comp1";
 
 const Logo = dynamic(() => import("@/components/canvas/logo"), {
   ssr: false,
@@ -161,6 +162,7 @@ export default function Home() {
       </section>
       <section className="content-section bg-black w-full h-screen"></section>
       <section className="bg-black w-full h-screen"></section>
+      <Comp1/>
     </main>
   );
 }
