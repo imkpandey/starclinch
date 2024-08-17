@@ -13,13 +13,15 @@ import Img5 from "@/assets/imgs/Comp1/imgg5.png";
 import Img6 from "@/assets/imgs/Comp1/imgg6.png";
 
 const Comp1 = () => {
-  const wrapperRef = useRef(null);
+  const wrapperRef1 = useRef(null);
+  const wrapperRef2 = useRef(null);
+  const expandDivRef = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
 
-      const wrapperTl = gsap.timeline({
+       gsap.timeline({
         scrollTrigger: {
           trigger: ".images-container",
           start: "center center",
@@ -28,63 +30,53 @@ const Comp1 = () => {
           pin: true,
           markers: true,
         },
-      });
-
-      wrapperTl.to(".images-container", {
+      }).to(".images-container", {
         xPercent: -100,
         ease: "none",
-      });
-    }, wrapperRef);
+      }
+    );
+
+    gsap.timeline({
+        scrollTrigger: {
+          trigger: ".images-container1",
+          start: "center center",
+          end: "+=100%",
+          scrub: true,
+          pin: true,
+          markers: true,
+        },
+      }).to(".images-container1", {
+        xPercent: 100,
+        ease: "none",
+      }
+    );
+
+    
+    gsap.timeline({
+        scrollTrigger: {
+          trigger: ".expand-div",
+          start: "center center",
+          end: "+=200%",
+          scrub: true,
+          pin: true,
+          markers: true,
+        },
+      }).to(".expand-div", {
+        width:"100%",
+        transition:" width 0.5s ",
+        ease: "none",
+      }
+    );
+ 
+    }, wrapperRef1,wrapperRef2,expandDivRef);
 
     return () => ctx.revert();
   }, []);
 
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-  //   // Vertical movement animation
-  //   const verticalTimeline = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: ".wrapper",
-  //       start: "center center", // Pin when the center of .wrapper aligns with the center of the viewport
-  //       end: "top top+=50%",
-  //       scrub: true,
-  //       // pin:true,
-  //       onUpdate: (self) => {
-  //         const progress = self.progress;
-  //         console.log(progress, "progress y");
-  //         // Add a condition to stop vertical movement once the animation reaches the desired point
-  //         if (progress <= 0.9) {
-  //           gsap.to(".images-container", {
-  //             yPercent: -0 * (1 - progress), // Vertical movement up to a maximum of -50%
-  //             ease: "none",
-  //           });
-  //         }
-  //       },
-  //     },
-  //   });
-
-  //   // Horizontal movement animation
-  //   gsap.to(".images-container", {
-  //     scrollTrigger: {
-  //       trigger: ".wrapper",
-  //       start: "top top+=50%", // Start the horizontal movement once the vertical movement has begun
-  //       end: "bottom bottom", // Continue the horizontal movement until the bottom of the viewport
-  //       scrub: true,
-  //       onUpdate: (self) => {
-  //         const progress = self.progress;
-  //         if (progress > 0.15) {
-  //           gsap.to(".images-container", {
-  //             xPercent: -100 * (progress - 0.15) * 2, // Adjust the factor for smooth horizontal movement
-  //             ease: "none",
-  //           });
-  //         }
-  //       },
-  //     },
-  //   });
-  // }, []);
-
+ 
+ 
   return (
-    <div ref={wrapperRef} className="wrapper">
+    <div ref={wrapperRef1} className="wrapper">
       <div className="images-container">
         <div className="image">
           <Image src={Img1} alt="Image 1" className="img-item" layout="fill" />
@@ -98,7 +90,13 @@ const Comp1 = () => {
         {/* <div className="center-div">
           
         </div> */}
-        {/* <div className="image">
+      
+      </div>
+      <div ref={expandDivRef} className="expand-div">
+       
+      </div>
+      <div className="images-container1">
+        <div className="image">
           <Image src={Img4} alt="Image 4" layout="fill" objectFit="cover" />
         </div>
         <div className="image">
@@ -106,8 +104,8 @@ const Comp1 = () => {
         </div>
         <div className="image">
           <Image src={Img6} alt="Image 6" layout="fill" objectFit="cover" />
-        </div> */}
-      </div>
+        </div>
+        </div>
     </div>
   );
 };
