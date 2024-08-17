@@ -25,21 +25,21 @@ const Comp1 = () => {
         .timeline({
           scrollTrigger: {
             trigger: wrapperRef1.current,
-            start: "top top",
-            end: "+=200%",
+            start: "center center",
+            end: "+=300%",
             scrub: true,
             pin: true,
             markers: true,
           },
         })
         .to(".images-container", {
-          xPercent: -100,
+          xPercent: -110,
           ease: "none",
         })
         .to(
           ".images-container1",
           {
-            xPercent: 100,
+            xPercent: 110,
             ease: "none",
           },
           "<"
@@ -48,41 +48,13 @@ const Comp1 = () => {
           ".expand-div",
           {
             width: "100vw",
+            height: "100vh",
             ease: "none",
           },
           "<"
         );
 
-      // gsap.timeline({
-      //     scrollTrigger: {
-      //       trigger: ".images-container1",
-      //       start: "center center",
-      //       end: "+=100%",
-      //       scrub: true,
-      //       pin: true,
-      //       markers: true,
-      //     },
-      //   }).to(".images-container1", {
-      //     xPercent: 100,
-      //     ease: "none",
-      //   }
-      // );
-
-      // gsap.timeline({
-      //     scrollTrigger: {
-      //       trigger: ".expand-div",
-      //       start: "center center",
-      //       end: "+=200%",
-      //       scrub: true,
-      //       pin: true,
-      //       markers: true,
-      //     },
-      //   }).to(".expand-div", {
-      //     width:"100%",
-      //     transition:" width 0.5s ",
-      //     ease: "none",
-      //   }
-      // );
+   
     }, wrapperRef1);
 
     return () => ctx.revert();
@@ -91,14 +63,16 @@ const Comp1 = () => {
   return (
     <div ref={wrapperRef1} className="wrapper">
       <div className="images-container">
-        <div className="image">
-          <Image src={Img1} alt="Image 1" className="img-item" layout="fill" />
+        <div className="image-div">
+          <Image src={Img1} alt="Image 1" className="img-item-o" layout="fill" />
         </div>
-        <div className="image">
+        <div className="inner-container">
+        <div className="image-div-inner">
           <Image src={Img2} alt="Image 2" className="img-item" layout="fill" />
         </div>
-        <div className="image">
+        <div className="image-div-inner">
           <Image src={Img3} alt="Image 3" className="img-item" layout="fill" />
+        </div>
         </div>
         {/* <div className="center-div">
           
@@ -106,15 +80,21 @@ const Comp1 = () => {
       </div>
       <div ref={expandDivRef} className="expand-div"></div>
       <div className="images-container1">
-        <div className="image">
-          <Image src={Img4} alt="Image 4" layout="fill" objectFit="cover" />
+        <div className="inner-container">
+        <div className="image-div-inner">
+          <Image src={Img6} alt="Image 2" className="img-item" layout="fill" />
         </div>
-        <div className="image">
-          <Image src={Img5} alt="Image 5" layout="fill" objectFit="cover" />
+        <div className="image-div-inner">
+          <Image src={Img4} alt="Image 3" className="img-item" layout="fill" />
         </div>
-        <div className="image">
-          <Image src={Img6} alt="Image 6" layout="fill" objectFit="cover" />
         </div>
+        <div className="image-div">
+          <Image src={Img5} alt="Image 1" className="img-item-o" layout="fill" />
+        </div>
+      
+        {/* <div className="center-div">
+          
+        </div> */}
       </div>
     </div>
   );
