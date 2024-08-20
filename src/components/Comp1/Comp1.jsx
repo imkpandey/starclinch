@@ -11,11 +11,14 @@ import Img3 from "@/assets/imgs/Comp1/imgg3.png";
 import Img4 from "@/assets/imgs/Comp1/imgg4.png";
 import Img5 from "@/assets/imgs/Comp1/imgg5.png";
 import Img6 from "@/assets/imgs/Comp1/imgg6.png";
+import OB from "@/assets/imgs/Comp1/orangeBall.png";
+import PB from "@/assets/imgs/Comp1/pinkBall.png";
 
 const Comp1 = () => {
   const wrapperRef1 = useRef(null);
   const wrapperRef2 = useRef(null);
   const expandDivRef = useRef(null);
+  const expandDivRef1 = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -52,6 +55,15 @@ const Comp1 = () => {
             ease: "none",
           },
           "<"
+        )
+        .to(
+          ".expand-div-inner",
+          {
+            width: "99.8vw",
+            height: "99.8vh",
+            ease: "none",
+          },
+          "<"
         );
 
    
@@ -78,7 +90,11 @@ const Comp1 = () => {
           
         </div> */}
       </div>
-      <div ref={expandDivRef} className="expand-div"></div>
+      <div ref={expandDivRef} className="expand-div">
+      <div ref={expandDivRef1} className="expand-div-inner">
+      
+      </div>
+      </div>
       <div className="images-container1">
         <div className="inner-container">
         <div className="image-div-inner">
