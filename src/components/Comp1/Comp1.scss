@@ -166,11 +166,11 @@ overflow: hidden;
     }
     .expand-div-innermost{
       position: absolute;
-       width: 110%;
+       width: 35vw;
        height: 75%;
        bottom:0%;
        left:50%;
-       transform: translate(-50%,20%);
+       transform: translate(-50%,15%);
       //  border:1px solid green;
        background: rgb(241,102,51);
 background: linear-gradient(90deg, rgba(241,102,51,1) 0%, rgba(102,102,102,1) 100%);
