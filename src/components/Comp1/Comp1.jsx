@@ -19,6 +19,8 @@ const Comp1 = () => {
   const wrapperRef2 = useRef(null);
   const expandDivRef = useRef(null);
   const expandDivRef1 = useRef(null);
+  const expandDivRef2 = useRef(null);
+  const expandDivRef3 = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -51,7 +53,7 @@ const Comp1 = () => {
           ".expand-div",
           {
             width: "100vw",
-            height: "100vh",
+            height: "150vh",
             ease: "none",
           },
           "<"
@@ -60,7 +62,16 @@ const Comp1 = () => {
           ".expand-div-inner",
           {
             width: "99.8vw",
-            height: "99.8vh",
+            height: "149.2vh",
+            ease: "none",
+          },
+          "<"
+        )
+        .to(
+          ".expand-div-innermost",
+          {
+            width: "90%",
+            height: "100%",
             ease: "none",
           },
           "<"
@@ -92,7 +103,13 @@ const Comp1 = () => {
       </div>
       <div ref={expandDivRef} className="expand-div">
       <div ref={expandDivRef1} className="expand-div-inner">
-      
+      <h2>India's most <br /> <span>TRUSTED</span> <br /> entertainment <br />platform</h2>
+      <div ref={expandDivRef2} className="expand-div-innermost">
+      <div ref={expandDivRef3} className="expand-div-innermost1">
+        <h2>Hello</h2>
+        </div>
+      </div>
+
       </div>
       </div>
       <div className="images-container1">

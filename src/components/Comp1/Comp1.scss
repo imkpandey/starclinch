@@ -141,6 +141,7 @@ overflow: hidden;
   // border: 1px solid yellow;
 
   .expand-div-inner{
+    position: relative;
     width: 33%;
     height:70vh;
     // top:50%;
@@ -148,6 +149,49 @@ overflow: hidden;
     // transform:translate(-50%,-50%);
     background-color: black;
     border-radius: 2vw;
+    overflow: hidden;
+
+    h2{
+      position: absolute;
+      color:white;
+      font-size: 1.8vw;
+      line-height: 1;
+      top:5%;
+      left:50%;
+      transform:translateX(-50%);
+
+      span{
+        font-weight: 500;
+      }
+    }
+    .expand-div-innermost{
+      position: absolute;
+       width: 110%;
+       height: 75%;
+       bottom:0%;
+       left:50%;
+       transform: translate(-50%,20%);
+      //  border:1px solid green;
+       background: rgb(241,102,51);
+background: linear-gradient(90deg, rgba(241,102,51,1) 0%, rgba(102,102,102,1) 100%);
+border-radius: 1.5vw;
+display:flex;
+justify-content: center;
+align-items: center;
+
+.expand-div-innermost1{
+  position: absolute;
+  width:99.75%;
+  height:99.5%;
+  background-color: black;
+  border-radius: 1.5vw;
+      h2{
+        left:50%;
+        transform:translateX(-50%);
+      }
+    }
+    }
+
   }
 }
 
