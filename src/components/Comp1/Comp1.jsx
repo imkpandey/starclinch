@@ -29,7 +29,7 @@ const Comp1 = () => {
           scrollTrigger: {
             trigger: wrapperRef1.current,
             start: "center center",
-            end: "+=300%",
+            end: "+=400%",
             scrub: true,
             pin: true,
             markers: true,
@@ -56,6 +56,11 @@ const Comp1 = () => {
           },
           "<"
         )
+        .to(".expand-div-two", {
+          yPercent: -40,
+          height: "120vh",
+          ease: "none",
+        })
         .to(
           ".expand-div-inner",
           {
@@ -65,8 +70,15 @@ const Comp1 = () => {
           },
           "<"
         );
-
-   
+      // .to(
+      //   ".expand-div-inner",
+      //   {
+      //     width: "99.8vw",
+      //     height: "99.8vh",
+      //     ease: "none",
+      //   },
+      //   "<"
+      // );
     }, wrapperRef1);
 
     return () => ctx.revert();
@@ -76,38 +88,74 @@ const Comp1 = () => {
     <div ref={wrapperRef1} className="wrapper">
       <div className="images-container">
         <div className="image-div">
-          <Image src={Img1} alt="Image 1" className="img-item-o" layout="fill" />
+          <Image
+            src={Img1}
+            alt="Image 1"
+            className="img-item-o"
+            layout="fill"
+          />
         </div>
         <div className="inner-container">
-        <div className="image-div-inner">
-          <Image src={Img2} alt="Image 2" className="img-item" layout="fill" />
-        </div>
-        <div className="image-div-inner">
-          <Image src={Img3} alt="Image 3" className="img-item" layout="fill" />
-        </div>
+          <div className="image-div-inner">
+            <Image
+              src={Img2}
+              alt="Image 2"
+              className="img-item"
+              layout="fill"
+            />
+          </div>
+          <div className="image-div-inner">
+            <Image
+              src={Img3}
+              alt="Image 3"
+              className="img-item"
+              layout="fill"
+            />
+          </div>
         </div>
         {/* <div className="center-div">
           
         </div> */}
       </div>
       <div ref={expandDivRef} className="expand-div">
-      <div ref={expandDivRef1} className="expand-div-inner">
-      
-      </div>
+        <div className="expand-div-two">
+          <h1 className="expand-heading">
+            India&apos;s most <br /> TRUSTED <br /> entertainment <br />{" "}
+            platform
+          </h1>
+          <div ref={expandDivRef1} className="expand-div-inner">
+            <div className="expand-div-inner-absolute"></div>
+          </div>
+        </div>
       </div>
       <div className="images-container1">
         <div className="inner-container">
-        <div className="image-div-inner">
-          <Image src={Img6} alt="Image 2" className="img-item" layout="fill" />
-        </div>
-        <div className="image-div-inner">
-          <Image src={Img4} alt="Image 3" className="img-item" layout="fill" />
-        </div>
+          <div className="image-div-inner">
+            <Image
+              src={Img6}
+              alt="Image 2"
+              className="img-item"
+              layout="fill"
+            />
+          </div>
+          <div className="image-div-inner">
+            <Image
+              src={Img4}
+              alt="Image 3"
+              className="img-item"
+              layout="fill"
+            />
+          </div>
         </div>
         <div className="image-div">
-          <Image src={Img5} alt="Image 1" className="img-item-o" layout="fill" />
+          <Image
+            src={Img5}
+            alt="Image 1"
+            className="img-item-o"
+            layout="fill"
+          />
         </div>
-      
+
         {/* <div className="center-div">
           
         </div> */}

@@ -163,7 +163,7 @@ export default function Home() {
       <section className="content-section bg-black w-full h-screen"></section>
       <section className="bg-black w-full h-screen"></section>
       <Comp1 />
-      <section className="bg-black w-full h-[200vh]"></section>
+      <section className="bg-black w-full h-[400vh]"></section>
       <section className="bg-black w-full h-screen"></section>
     </main>
   );
