@@ -158,8 +158,8 @@
     // overflow: hidden;
 
     .expand-heading {
-      position:absolute;
-      top:5vw;
+      position: absolute;
+      top: 5vw;
       color: white;
       font-size: 2.25vw;
       font-weight: 500;
@@ -169,10 +169,10 @@
     }
 
     .expand-div-inner {
-      width: 50vw;
+      width: 60vw;
       min-height: 120vh;
       position: absolute;
-      top:22.5vw;
+      top: 22.5vw;
       // top:50%;
       // left:50%;
       // transform:translate(-50%,-50%);
@@ -196,42 +196,45 @@
         // align-items: center;
         // justify-content: space-evenly;
         background-color: black;
-        
 
-        .dance-img{
+
+        .dance-img {
           position: absolute;
-          position:relative;
+          position: relative;
           width: 25vw;
           object-fit: contain;
-          top:5vw;
-          left:50%;
-          transform:translateX(-60%);
+          top: 5vw;
+          left: 50%;
+          transform: translateX(-60%);
         }
-        .dramatic-h1{
+
+        .dramatic-h1 {
           position: absolute;
-          color:white;
+          color: white;
           font-size: 3vw;
           text-transform: uppercase;
-          top:40vw;
-          left:50%;
-          transform:translateX(-50%);
+          top: 40vw;
+          left: 50%;
+          transform: translateX(-50%);
+          white-space: nowrap;
           // left:50%;
           // transform:translateX(-50%);
         }
-        .dramatic-p{
-          position: absolute;
-          color:white;
-          font-size: 1.5vw;
-          top:45vw;
-          left:50%;
-          transform:translateX(-50%);
 
-        }
-        .imggs-cont{
+        .dramatic-p {
           position: absolute;
-          top:60.5vw;
+          color: white;
+          font-size: 1.5vw;
+          top: 45vw;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .imggs-cont {
+          position: absolute;
+          top: 60.5vw;
           width: 100%;
-          display:flex;
+          display: flex;
           justify-content: center;
           // border:1px solid pink;
           // overflow:hidden;
@@ -255,7 +258,7 @@
 //   </div>
 //   </div>
 //   {/* <div className="center-div">
-    
+
 //   </div> */}
 // </div>
 // <div ref={expandDivRef} className="expand-div">
@@ -283,7 +286,7 @@
 //   </div>
 
 //   {/* <div className="center-div">
-    
+
 //   </div> */}
 // </div>
 // </div>

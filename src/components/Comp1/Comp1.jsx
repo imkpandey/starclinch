@@ -61,30 +61,26 @@ const Comp1 = () => {
           },
           "<"
         )
-        .to(".expand-div-two", {
-          // yPercent: 25,
-          height: "250vh",
-          ease: "none",
-        })
         .to(
           ".expand-div-inner",
           {
             width: "120.8vw",
             height: "250.2vh",
             ease: "none",
-          },
-          "<"
-        )
-        
-        .to(
-          ".expand-div-inner-absolute",
-          {
-            width: "100vw",
-            height: "100%",
-            ease: "none",
+            delay: 0.2,
           },
           "<"
         );
+
+      // .to(
+      //   ".expand-div-inner-absolute",
+      //   {
+      //     width: "100vw",
+      //     height: "100%",
+      //     ease: "none",
+      //   },
+      //   "<"
+      // );
       // .to(
       //   ".expand-div-inner",
       //   {
@@ -140,19 +136,17 @@ const Comp1 = () => {
           </h1>
           <div ref={expandDivRef1} className="expand-div-inner">
             <div className="expand-div-inner-absolute">
-              <Image  src={Dancer}
-              alt="Dancer"
-              className="dance-img"></Image>
-            <h1 className="dramatic-h1">THE DRAMATIC TURN</h1>
-            <p className="dramatic-p">In a twist of fate, Karan hires Arjun for a major  event through StarClinch. The collaboration  is <br /> a huge success, with Arjun's engaging  presence and Karan's flawless organization.</p>
-            <div className="imggs-cont">
-            <Image  src={Karan}
-              alt="Dancer"
-              className="karan-img"></Image>
-            <Image  src={Form}
-              alt="Dancer"
-              className="form-img"></Image>
-            </div>
+              <Image src={Dancer} alt="Dancer" className="dance-img"></Image>
+              <h1 className="dramatic-h1">THE DRAMATIC TURN</h1>
+              <p className="dramatic-p">
+                In a twist of fate, Karan hires Arjun for a major event through
+                StarClinch. The collaboration is <br /> a huge success, with
+                Arjun's engaging presence and Karan's flawless organization.
+              </p>
+              <div className="imggs-cont">
+                <Image src={Karan} alt="Dancer" className="karan-img"></Image>
+                <Image src={Form} alt="Dancer" className="form-img"></Image>
+              </div>
             </div>
           </div>
         </div>
