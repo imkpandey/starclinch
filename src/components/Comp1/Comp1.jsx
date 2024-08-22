@@ -13,6 +13,9 @@ import Img5 from "@/assets/imgs/Comp1/imgg5.png";
 import Img6 from "@/assets/imgs/Comp1/imgg6.png";
 import OB from "@/assets/imgs/Comp1/orangeBall.png";
 import PB from "@/assets/imgs/Comp1/pinkBall.png";
+import Dancer from "@/assets/imgs/Comp1/dancer.png";
+import Karan from "@/assets/imgs/Comp1/karanTauba.png";
+import Form from "@/assets/imgs/Comp1/starform.png";
 
 const Comp1 = () => {
   const wrapperRef1 = useRef(null);
@@ -31,7 +34,7 @@ const Comp1 = () => {
           scrollTrigger: {
             trigger: wrapperRef1.current,
             start: "center center",
-            end: "+=400%",
+            end: "+=100%",
             scrub: true,
             pin: true,
             markers: true,
@@ -53,27 +56,28 @@ const Comp1 = () => {
           ".expand-div",
           {
             width: "120vw",
-            height: "150vh",
+            height: "250vh",
             ease: "none",
           },
           "<"
         )
         .to(".expand-div-two", {
-          yPercent: -40,
-          height: "120vh",
+          // yPercent: 25,
+          height: "250vh",
           ease: "none",
         })
         .to(
           ".expand-div-inner",
           {
-            width: "119.8vw",
-            height: "149.2vh",
+            width: "120.8vw",
+            height: "250.2vh",
             ease: "none",
           },
           "<"
         )
+        
         .to(
-          ".expand-div-innermost",
+          ".expand-div-inner-absolute",
           {
             width: "100vw",
             height: "100%",
@@ -135,7 +139,21 @@ const Comp1 = () => {
             platform
           </h1>
           <div ref={expandDivRef1} className="expand-div-inner">
-            <div className="expand-div-inner-absolute"></div>
+            <div className="expand-div-inner-absolute">
+              <Image  src={Dancer}
+              alt="Dancer"
+              className="dance-img"></Image>
+            <h1 className="dramatic-h1">THE DRAMATIC TURN</h1>
+            <p className="dramatic-p">In a twist of fate, Karan hires Arjun for a major  event through StarClinch. The collaboration  is <br /> a huge success, with Arjun's engaging  presence and Karan's flawless organization.</p>
+            <div className="imggs-cont">
+            <Image  src={Karan}
+              alt="Dancer"
+              className="karan-img"></Image>
+            <Image  src={Form}
+              alt="Dancer"
+              className="form-img"></Image>
+            </div>
+            </div>
           </div>
         </div>
       </div>

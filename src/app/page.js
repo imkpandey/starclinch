@@ -117,7 +117,7 @@ export default function Home() {
       ref={homeRef}
       className="text-white w-full min-h-screen flex flex-col items-center"
     >
-      <section className="hero-section w-full h-screen flex justify-center items-center">
+      {/* <section className="hero-section w-full h-screen flex justify-center items-center">
         <div className="logo w-fit h-fit fixed top-10 left-10 z-10">
           <Image src="/logo.webp" alt="logo" width={200} height={200} />
         </div>
@@ -161,7 +161,7 @@ export default function Home() {
         </div>
       </section>
       <section className="content-section bg-black w-full h-screen"></section>
-      <section className="bg-black w-full h-screen"></section>
+      <section className="bg-black w-full h-screen"></section> */}
       <Comp1 />
       <section className="bg-black w-full h-[400vh]"></section>
       <section className="bg-black w-full h-screen"></section>
