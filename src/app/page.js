@@ -9,7 +9,12 @@ import SplitType from "split-type";
 import Stars from "@/components/canvas/stars";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import Image from "next/image";
-import Comp1 from "@/components/Comp1/Comp1";
+import Navbar from "@/components/navbar/Navbar";
+import Arjun from "@/assets/imgs/arjun.png";
+import Karan from "@/assets/imgs/karan.png";
+import NestedScroll from "@/components/nestedScroll/NestedScroll";
+import PitchMusic from "@/components/pitchMusic/PitchMusic";
+import Dilemma from "@/components/dilemma/Dilemma";
 
 const Logo = dynamic(() => import("@/components/canvas/logo"), {
   ssr: false,
@@ -115,12 +120,10 @@ export default function Home() {
   return (
     <main
       ref={homeRef}
-      className="text-white w-full min-h-screen flex flex-col items-center"
+      className="text-white w-full min-h-screen flex flex-col items-center gap-14"
     >
-      {/* <section className="hero-section w-full h-screen flex justify-center items-center">
-        <div className="logo w-fit h-fit fixed top-10 left-10 z-10">
-          <Image src="/logo.webp" alt="logo" width={200} height={200} />
-        </div>
+      <Navbar />
+      <section className="hero-section w-full h-screen flex justify-center items-center">
         <div className="relative top-[-3rem] w-fit h-fit flex flex-col items-center justify-center">
           <div className="w-fit h-fit absolute top-[-4rem] text-white overflow-hidden">
             <h1 className="subheading text-[clamp(1rem,1.75vw,1.75rem)] font-light tracking-tighter text-center">
@@ -160,11 +163,76 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="content-section bg-black w-full h-screen"></section>
-      <section className="bg-black w-full h-screen"></section> */}
-      <Comp1 />
-      <section className="bg-black w-full h-[400vh]"></section>
+      <section className="content-section bg-black text-white w-full h-screen flex flex-col justify-center items-center gap-14">
+        <div className="problem-heading w-fit h-fit flex flex-col justify-center items-center">
+          <h1 className="p-heading text-[clamp(1.5rem,5vw,5rem)] font-semibold tracking-tighter text-center">
+            PROBLEM FACED
+          </h1>
+          <p className="sub-heading w-[70%] text-[clamp(0.7rem,1.25vw,1.25rem)] font-light text-center text-gray-400">
+            A rising social media influencer, lands a promising deal. But his
+            dreams are shattered when the company vanishes without paying him,
+            leaving him scammed and disheartened.
+          </p>
+        </div>
+        <div className="cards-container w-full h-full flex justify-center items-center gap-16">
+          <div className="problem-card_one relative w-[30%] h-full bg-[#EF5919] rounded-xl flex flex-col justify-between p-6 overflow-hidden">
+            <div className="absolute bottom-[-10%] right-[-20%] w-full h-[70%]">
+              <Image
+                src={Arjun}
+                alt="Arjun"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <h1 className="text-[clamp(1.5rem,4vw,4rem)] drop-shadow-[6px_6px_var(--tw-shadow-color)] shadow-[#970F0F] leading-[4rem] font-semibold tracking-tighter uppercase">
+              Social <br /> Media <br /> Influencer
+            </h1>
+            <p className="text-[clamp(0.7rem,1.1vw,1.1rem)] leading-tight font-light text-gray-200 w-[55%]">
+              <span className="text-white text-[clamp(1.25rem,2vw,2rem)] font-semibold">
+                Arjun
+              </span>
+              , a rising social media influencer, lands a promising deal. But
+              his dreams are shattered when the company{" "}
+              <span className="text-white font-medium">
+                {" "}
+                vanishes without paying him, leaving him scammed and
+                disheartened.
+              </span>
+            </p>
+          </div>
+          <div className="problem-card_two relative w-[30%] h-full bg-[#FD2D7D] rounded-xl flex flex-col gap-2 p-6 overflow-hidden">
+            <div className="absolute bottom-[-10%] right-[-20%] w-full h-[70%]">
+              <Image
+                src={Karan}
+                alt="Arjun"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <h1 className="text-[clamp(1.5rem,4vw,4rem)] drop-shadow-[6px_6px_var(--tw-shadow-color)] shadow-[#970F0F] leading-[4rem] font-semibold tracking-tighter uppercase">
+              Talent <br /> Acquirer
+            </h1>
+            <p className="text-[clamp(0.7rem,1.1vw,1.1rem)] leading-tight font-light text-gray-200 w-[55%]">
+              <span className="text-white text-[clamp(1.25rem,2vw,2rem)] font-semibold">
+                Karan
+              </span>
+              , a seasoned talent acquirer, faces a nightmare.
+              <span className="text-white font-medium">
+                {" "}
+                Celebrities cancel at the last minute
+              </span>
+              , turning his meticulously planned events into chaotic disasters
+              and threatening his reputation.
+            </p>
+          </div>
+        </div>
+      </section>
+      {/* <Comp1 /> */}
+      <NestedScroll homeRef={homeRef} />
+      {/* <section className="relative bg-black w-full h-[120vh] flex items-center overflow-hidden"></section> */}
+      <section className="bg-black w-full h-[300vh]"></section>
+      <PitchMusic homeRef={homeRef} />
       <section className="bg-black w-full h-screen"></section>
+      {/* <section className="bg-black w-full h-screen"></section> */}
+      <Dilemma homeRef={homeRef} />
     </main>
   );
 }

@@ -54,23 +54,43 @@ export default function Logo({ scale, homeRef }) {
       });
 
       tl.current
-        .to(ref.current.position, {
-          x: -3,
-          y: 11,
+        .to(ref.current.scale, {
+          x: 0,
+          y: 0,
+          z: 0,
           duration: 2,
           ease: "none",
         })
         .to(
-          ref.current.rotation,
+          ref.current.position,
           {
             x: 0,
-            y: 10,
+            y: 100,
             z: 0,
             duration: 2,
             ease: "none",
           },
           "<"
         );
+
+      // tl.current
+      //   .to(ref.current.position, {
+      //     x: -3,
+      //     y: 11,
+      //     duration: 2,
+      //     ease: "none",
+      //   })
+      //   .to(
+      //     ref.current.rotation,
+      //     {
+      //       x: 0,
+      //       y: 10,
+      //       z: 0,
+      //       duration: 2,
+      //       ease: "none",
+      //     },
+      //     "<"
+      //   );
     }, ref);
 
     return () => ctx.revert();
